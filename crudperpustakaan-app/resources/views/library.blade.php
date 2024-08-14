@@ -15,7 +15,7 @@
     <title>PERPUSTAKAAN FIRMAN</title>
 </head>
 <body>
-    <h3 class="text-center p-3">Daftar Buku-Buku Perpustakaan</h3>                  
+    <h3 class="text-center p-3">Daftar Buku-Buku </h3>                  
   
     {{-- table --}}
     <div class="container">
