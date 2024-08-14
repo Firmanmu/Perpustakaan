@@ -23,3 +23,10 @@ class BukuSeeder extends Seeder
         ]);
     }
 }
+
+
+    //     datapegawai=Library
+    //     tambahdata=tambah
+    //     employe=Buku
+    //     tambahpegawai=tambahbuku
+    //     pegawai=Buku

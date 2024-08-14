@@ -19,3 +19,4 @@ Route::post('/insertdata', [BukuController::class, 'insertdata'])->name('insertd
     //     tambahdata=tambah
     //     employe=Buku
     //     tambahpegawai=tambahbuku
+    //     pegawai=Buku

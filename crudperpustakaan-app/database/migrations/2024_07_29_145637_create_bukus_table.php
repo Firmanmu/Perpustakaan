@@ -31,3 +31,11 @@ return new class extends Migration
         Schema::dropIfExists('buku');
     }
 };
+
+
+
+    //     datapegawai=Library
+    //     tambahdata=tambah
+    //     employe=Buku
+    //     tambahpegawai=tambahbuku
+    //     pegawai=Buku

@@ -21,6 +21,7 @@ class BukuController extends Controller
 
     public function insertdata(Request $request){
         Buku::create($request->all());
+        return redirect()->route('buku');
     }
 
 }
@@ -30,3 +31,4 @@ class BukuController extends Controller
     //     tambahdata=tambah
     //     employe=Buku
     //     tambahpegawai=tambahbuku
+    //     pegawai=Buku

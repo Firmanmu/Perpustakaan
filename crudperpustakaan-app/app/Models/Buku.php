@@ -14,8 +14,12 @@ class Buku extends Model
         'kategori',
         'penulis',
         'penerbit',
+        'slug',
     ];
 }
 
-
-// datapegawai = library
+    //     datapegawai=Library
+    //     tambahdata=tambah
+    //     employe=Buku
+    //     tambahpegawai=tambahbuku
+    //     pegawai=Buku
