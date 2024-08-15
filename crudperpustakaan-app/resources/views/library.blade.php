@@ -8,17 +8,18 @@
     <title>PERPUSTAKAAN FIRMAN</title>
 </head>
 <body>
+  @if ($message = Session::get('success'))
+  <div class="alert alert-primary" role="alert">
+   {{ $message }}
+  </div>
+  @endif
     <h3 class="text-center p-3">Daftar Buku-Buku </h3>                  
   
     {{-- table --}}
     <div class="container">
         <a href="/tambahbuku" class="btn btn-success">Tambahkan</a>
         <div class="row">
-          @if ($message = Session::get('success'))
-          <div class="alert alert-primary" role="alert">
-           {{ $message }}
-          </div>
-          @endif
+          
           </div>
           <table class="table">
             <thead>
