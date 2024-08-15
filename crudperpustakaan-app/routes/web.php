@@ -14,6 +14,10 @@ Route::get('/tambahbuku', [BukuController::class, 'tambahbuku'])->name('tambahbu
 
 Route::post('/insertdata', [BukuController::class, 'insertdata'])->name('insertdata');
 
+Route::get('/tampilkandata/{id}', [BukuController::class, 'tampilkandata'])->name('tampilkandata');
+
+Route::post('/updatedata/{id}', [BukuController::class, 'updatedata'])->name('updatedata');
+
 
     //     datapegawai=Library
     //     tambahdata=tambah

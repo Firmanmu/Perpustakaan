@@ -11,7 +11,7 @@
     <h3 class="text-center p-3">Daftar Buku-Buku </h3>                  
   
     {{-- table --}}
-    <table class="container">
+    <div class="container">
         <a href="/tambahbuku" class="btn btn-success">Tambahkan</a>
         <div class="row">
           @if ($message = Session::get('success'))
@@ -20,6 +20,7 @@
           </div>
           @endif
           </div>
+          <table class="table">
             <thead>
               <tr>
                 <th scope="row">Nomor</th>
@@ -40,13 +41,15 @@
                 <td>{{ $row->penulis }}</td>
                 <td>{{ $row->penerbit }}</td>
                 {{-- <td>{{ $row->berkas_sampul }}</td> --}}
-                <td><button type="button" class="btn btn-primary">Ubah</button>
+                <td>
+                    <a href="/tampilkandata/{{ $row->id }}" class="btn btn-primary">Ubah</a>
                     <button type="button" class="btn btn-danger">Hapus</button>
                 </td>
               </tr>
               @endforeach
             </tbody>
-          </table>  
+          </div>
+        </table>
     </div>
     {{-- table --}}
    
