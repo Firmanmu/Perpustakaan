@@ -18,6 +18,8 @@ Route::get('/tampilkandata/{id}', [BukuController::class, 'tampilkandata'])->nam
 
 Route::post('/updatedata/{id}', [BukuController::class, 'updatedata'])->name('updatedata');
 
+Route::get('/delete/{id}', [BukuController::class, 'delete'])->name('delete');
+
 
     //     datapegawai=Library
     //     tambahdata=tambah

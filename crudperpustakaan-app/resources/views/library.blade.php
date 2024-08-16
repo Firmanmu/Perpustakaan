@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +7,30 @@
     <title>PERPUSTAKAAN FIRMAN</title>
 </head>
 <body>
+  {{-- notifikasi --}}
   @if ($message = Session::get('success'))
   <div class="alert alert-primary" role="alert">
    {{ $message }}
   </div>
   @endif
-    <h3 class="text-center p-3">Daftar Buku-Buku </h3>                  
-  
+{{-- endNotif --}}
+
+    {{-- navbar --}}
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand">Daftar Buku-Buku</a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  {{-- EndNavbar --}}
+
     {{-- table --}}
     <div class="container">
         <a href="/tambahbuku" class="btn btn-success">Tambahkan</a>
-        <div class="row">
+        <div>
           
           </div>
           <table class="table">
@@ -33,9 +45,12 @@
               </tr>
             </thead>
             <tbody>
+              @php
+                $no = 1;
+              @endphp
               @foreach ($data as $row)
               <tr>
-                <td>{{ $row->id }}</td>
+                <td>{{ $no++}}</td>
                 <td>{{ $row->judul }}</td>
                 {{-- <td>{{ $row->slug }}</td> --}}
                 <td>{{ $row->kategori}}</td>
@@ -44,7 +59,7 @@
                 {{-- <td>{{ $row->berkas_sampul }}</td> --}}
                 <td>
                     <a href="/tampilkandata/{{ $row->id }}" class="btn btn-primary">Ubah</a>
-                    <button type="button" class="btn btn-danger">Hapus</button>
+                    <a href="/delete/{{ $row->id }}" class="btn btn-danger">Hapus</a>
                 </td>
               </tr>
               @endforeach

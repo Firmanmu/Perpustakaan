@@ -35,6 +35,12 @@ class BukuController extends Controller
         return redirect()->route('buku')->with('success', 'Data Berhasil Di Ubah');
     }
 
+    public function delete($id){
+        $data = Buku::find($id);
+        $data->delete();
+        return redirect()->route('buku')->with('success', 'Data Berhasil Di hapus');
+    }
+
 }
 
 
