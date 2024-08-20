@@ -12,10 +12,10 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-7">
+            <div class="col-6">
             <div class="card">
                 <div class="card-body">
-                  <form action="{{ url('/insertdata') }}" method="post">
+                  <form action="{{ url('/insertdata') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="judul" >Judul</label>
@@ -32,6 +32,10 @@
                       <div class="mb-3">
                         <label for="penerbit" >Penerbit</label>
                         <input type="text" name="penerbit" id="penerbit"></input>
+                      </div>
+                      <div class="mb-3">
+                        <label for="sampul" >Tambahkan Sampul Buku</label>
+                        <input type="file" name="sampul" id="sampul"></input>
                       </div>
                       <input class="btn btn-primary" type="submit" value="Submit">
                     </form>

@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
             $table->string('judul');  
-            $table->string('slug');
+            $table->string('sampul')->nullable()->default(null);
             $table->string('kategori');
             $table->string('penulis');
             $table->string('penerbit');
-            $table->string('berkas_sampul');
             $table->timestamps();
         });
     }
@@ -39,3 +38,4 @@ return new class extends Migration
     //     employe=Buku
     //     tambahpegawai=tambahbuku
     //     pegawai=Buku
+    //     foto=sampul

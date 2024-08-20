@@ -19,10 +19,19 @@ class BukuController extends Controller
         return view('tambah');
     }
 
+
+
     public function insertdata(Request $request){
-        Buku::create($request->all());
+        $data = Buku::create($request->all());
+        if($request->hasFile('sampul')){
+            $request->file('sampul')->move('sampulbuku/', $request->file('sampul')->getClientOriginalName());
+            $data->sampul = $request->file('sampul')->getClientOriginalName();
+            $data->save();
+        }
         return redirect()->route('buku')->with('success', 'Data Berhasil Di Tambahkan');
     }
+
+
 
     public function tampilkandata($id){
         $data = Buku::find($id);
@@ -43,7 +52,7 @@ class BukuController extends Controller
 
 }
 
-
+    //     foto=sampul
     //     datapegawai=Library
     //     tambahdata=tambah
     //     employe=Buku

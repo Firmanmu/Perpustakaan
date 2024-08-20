@@ -38,6 +38,7 @@
               <tr>
                 <th scope="row">Nomor</th>
                 <th scope="row">Judul</th>
+                <th scope="row">Sampul</th>
                 <th scope="col">Kategori</th>
                 <th scope="col">Penulis</th>
                 <th scope="col">Penerbit</th>
@@ -52,7 +53,9 @@
               <tr>
                 <td>{{ $no++}}</td>
                 <td>{{ $row->judul }}</td>
-                {{-- <td>{{ $row->slug }}</td> --}}
+                <td>
+                  <img src="{{ asset('sampulbuku/'.$row->sampul) }}" style="width:40px;">
+                </td>
                 <td>{{ $row->kategori}}</td>
                 <td>{{ $row->penulis }}</td>
                 <td>{{ $row->penerbit }}</td>
