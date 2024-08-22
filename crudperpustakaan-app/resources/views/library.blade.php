@@ -43,9 +43,9 @@
               @php
                 $no = 1;
               @endphp
-              @foreach ($data as $row)
+              @foreach ($data as $index => $row)
               <tr>
-                <td>{{ $no++}}</td>
+                <td>{{ $index + $data->firstItem() }}</td>
                 <td>{{ $row->judul }}</td>
                 <td>
                   <img src="{{ asset('sampulbuku/'.$row->sampul) }}" style="width:40px;">
@@ -62,6 +62,7 @@
             </tbody>
           </div>
         </table>
+        {{ $data->links() }}
     </div>
     {{-- End table --}}
    
@@ -78,7 +79,7 @@
       var judul = $(this).attr('data-judul');
       swal({
           title: "Yakin ?",
-          text: "Anda Akan Menghapus Buku "+judul+" ",
+          text: "Anda Akan Menghapus Buku "+judul+"",
           icon: "warning",
           buttons: true,
           dangerMode: true,

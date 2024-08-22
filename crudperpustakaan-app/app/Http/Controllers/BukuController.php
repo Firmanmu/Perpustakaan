@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class BukuController extends Controller
 {
     public function index(){
-        $data = Buku::all();
+        $data = Buku::paginate(5);
         return view('library', compact('data'));
     }
 
