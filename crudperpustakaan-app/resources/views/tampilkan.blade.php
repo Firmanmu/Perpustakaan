@@ -46,9 +46,10 @@
 </html>
 
 {{-- 
-    //     datapegawai=Library
+     //     datapegawai=Library
     //     tambahdata=tambah
     //     employe=Buku
     //     tambahpegawai=tambahbuku
-    //     pegawai=Buku 
-    --}}
+    //     pegawai=Buku
+    //     foto=sampul
+    //     pegawaiid=Bukuid --}}

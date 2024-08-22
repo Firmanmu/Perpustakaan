@@ -32,10 +32,10 @@ return new class extends Migration
 };
 
 
-
-    //     datapegawai=Library
+//     datapegawai=Library
     //     tambahdata=tambah
     //     employe=Buku
     //     tambahpegawai=tambahbuku
     //     pegawai=Buku
     //     foto=sampul
+    //     pegawaiid=Bukuid

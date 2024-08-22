@@ -26,3 +26,5 @@ Route::get('/delete/{id}', [BukuController::class, 'delete'])->name('delete');
     //     employe=Buku
     //     tambahpegawai=tambahbuku
     //     pegawai=Buku
+    //     foto=sampul
+    //     pegawaiid=Bukuid

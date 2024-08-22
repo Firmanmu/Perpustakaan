@@ -7,7 +7,7 @@
     <title>PERPUSTAKAAN FIRMAN</title>
 </head>
 <body>
-  {{-- notifikasi --}}
+  {{-- pesan notifikasi --}}
   @if ($message = Session::get('success'))
   <div class="alert alert-primary" role="alert">
    {{ $message }}
@@ -53,10 +53,9 @@
                 <td>{{ $row->kategori}}</td>
                 <td>{{ $row->penulis }}</td>
                 <td>{{ $row->penerbit }}</td>
-                {{-- <td>{{ $row->berkas_sampul }}</td> --}}
                 <td>
                     <a href="/tampilkandata/{{ $row->id }}" class="btn btn-primary">Ubah</a>
-                    <a href="/delete/{{ $row->id }}" class="btn btn-danger">Hapus</a>
+                    <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}" data-judul="{{ $row->judul }}">Hapus</a>
                 </td>
               </tr>
               @endforeach
@@ -64,16 +63,47 @@
           </div>
         </table>
     </div>
-    {{-- table --}}
+    {{-- End table --}}
    
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+{{-- konfirmasi delete --}}
+<script>
+    $('.delete').click(function(){
+      var bukuid = $(this).attr('data-id');
+      var judul = $(this).attr('data-judul');
+      swal({
+          title: "Yakin ?",
+          text: "Anda Akan Menghapus Buku "+judul+" ",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+            })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/delete/"+bukuid+""
+         swal("Buku Berhasil Di Hapus!", {
+              icon: "success",
+            });
+          } else {
+            swal("Buku Tidak Jadi Dihapus!");
+          }
+      });
+    });
+</script>
+{{-- end konfir delete --}}
+
 </html>
 
-
-    {{-- //     datapegawai=Library
-    //     tambahdata=tambah
-    //     employe=Buku
-    //     tambahpegawai=tambahbuku
-    //     pegawai=Buku --}}
+{{-- 
+//     datapegawai=Library
+//     tambahdata=tambah
+//     employe=Buku
+//     tambahpegawai=tambahbuku
+//     pegawai=Buku
+//     foto=sampul
+//     pegawaiid=Bukuid --}}
