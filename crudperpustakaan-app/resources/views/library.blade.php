@@ -17,15 +17,21 @@
 
     {{-- navbar --}}
     <div class="container">
-      <h1 class="text-center">Daftar Buku-Buku</h1>
+      <h1 class="text-center p-4">Daftar Buku-Buku</h1>
     </div>
   {{-- EndNavbar --}}
 
     {{-- table --}}
+    
     <div class="container">
-        <a href="/tambahbuku" class="btn btn-success">Tambahkan</a>
+    
+        <a href="/tambahbuku" class="btn btn-success">Tambahkan</a> 
+        <div class="col-4 float-end mb-3">
+          <input class="form-control" type="text" placeholder="mencari buku" aria-label="default input example">
+        </div>
         <div>
           
+
           </div>
           <table class="table">
             <thead>
