@@ -10,8 +10,12 @@ use App\Http\Controllers\Controller;
 
 class BukuController extends Controller
 {
-    public function index(){
-        $data = Buku::paginate(5);
+    public function index(Request $request){
+        if($request->has('search')){
+            $data = Buku::where('judul', 'LIKE', '%' .$request->search. '%')->paginate(5);
+        }else{
+            $data = Buku::paginate(5);
+        }
         return view('library', compact('data'));
     }
 

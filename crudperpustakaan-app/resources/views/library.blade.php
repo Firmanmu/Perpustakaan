@@ -17,7 +17,7 @@
 
     {{-- navbar --}}
     <div class="container">
-      <h1 class="text-center p-4">Daftar Buku-Buku</h1>
+      <h1 class="text-center p-4">DAFTAR BUKU-BUKU</h1>
     </div>
   {{-- EndNavbar --}}
 
@@ -25,9 +25,11 @@
     
     <div class="container">
     
-        <a href="/tambahbuku" class="btn btn-success">Tambahkan</a> 
+      <a href="/tambahbuku" class="btn btn-success">Tambahkan</a> 
         <div class="col-4 float-end mb-3">
-          <input class="form-control" type="text" placeholder="mencari buku" aria-label="default input example">
+          <form action="/buku" method="get">
+            <input class="form-control" type="text" placeholder="mencari buku yang mana?" name="search" aria-label="default input example">
+          </form>
         </div>
         <div>
           
