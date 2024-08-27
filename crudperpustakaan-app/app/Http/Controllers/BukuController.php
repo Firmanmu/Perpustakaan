@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use PDF;
 
 // use Illuminate\Http\Request;
 
@@ -54,11 +55,23 @@ class BukuController extends Controller
         return redirect()->route('buku')->with('success', 'Data Berhasil Dihapus!');
     }
 
+    public function exportpdf(){
+        $data = Buku::all();
+
+        view()->share('data', $data);
+        $pdf = PDF::loadview('databuku-pdf');
+        return $pdf->download('databuku.pdf');
+    }
 }
+
+ 
+
+
 
     //     foto=sampul
     //     datapegawai=Library
     //     tambahdata=tambah
-    //     employe=Buku
+    //     datapegawai-pdf = databuku-pdf
+    //     employecntroller=Bukucontroller
     //     tambahpegawai=tambahbuku
     //     pegawai=Buku

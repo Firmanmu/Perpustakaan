@@ -23,12 +23,12 @@
 
     {{-- table --}}
     
-    <div class="container">
-    
-      <a href="/tambahbuku" class="btn btn-success">Tambahkan</a> 
+    <div class="container border border-2 p-3">
+      <a href="/tambahbuku" class="btn btn-success col-2 m-2 rounded-pill">Tambah Buku</a>
+      <a href="/exportpdf" class="btn btn-info rounded-pill">Export PDF</a> 
         <div class="col-4 float-end mb-3">
           <form action="/buku" method="get">
-            <input class="form-control" type="text" placeholder="mencari buku yang mana?" name="search" aria-label="default input example">
+            <input  class="form-control col-4 border border-primary rounded-pill" type="text" placeholder="mencari buku yang mana?" name="search" aria-label="default input example">
           </form>
         </div>
         <div>
@@ -108,11 +108,10 @@
 
 </html>
 
-{{-- 
+{{-- //     foto=sampul
 //     datapegawai=Library
 //     tambahdata=tambah
-//     employe=Buku
+//      datapegawai-pdf = databuku-pdf
+//     employecntroller=Bukucontroller
 //     tambahpegawai=tambahbuku
-//     pegawai=Buku
-//     foto=sampul
-//     pegawaiid=Bukuid --}}
+//     pegawai=Buku --}}

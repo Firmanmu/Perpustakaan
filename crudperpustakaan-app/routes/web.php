@@ -20,11 +20,14 @@ Route::post('/updatedata/{id}', [BukuController::class, 'updatedata'])->name('up
 
 Route::get('/delete/{id}', [BukuController::class, 'delete'])->name('delete');
 
+// export pdf
+Route::get('/exportpdf', [BukuController::class, 'exportpdf'])->name('exportpdf');
 
+
+   //     foto=sampul
     //     datapegawai=Library
     //     tambahdata=tambah
-    //     employe=Buku
+    //   datapegawai-pdf = databuku-pdf
+    //     employecntroller=Bukucontroller
     //     tambahpegawai=tambahbuku
     //     pegawai=Buku
-    //     foto=sampul
-    //     pegawaiid=Bukuid
